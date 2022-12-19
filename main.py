@@ -83,7 +83,7 @@ def main():
 
 
 if __name__ == '__main__':
-    schedule.every(15).seconds.do(main)
+    schedule.every().minute.do(main)
 
     while True:
         schedule.run_pending()

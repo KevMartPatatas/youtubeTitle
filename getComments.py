@@ -4,9 +4,11 @@ import time
 from getReactions import get_reactions
 from descargarArchivos import *
 from postID import leer_postID
+import os
+from decouple import config
 
-
-token_de_acceso = 'EAAJZCZAtZCHrxsBAOcqIrqobe6MQsfalvZBiGzwqZCxvnwIOEDKvY1GU6rtOJ3hrLYRvdgJQZBnbQlQAZC4SF7tuGcZApU49zlZBnHRnZCwiE4aKK2MBWQA3jGz1eLdNgCaoJ07cknGDQObZAhsqvRuUWPbfEYwop022T8W0nLQBSOcZCknHbRMVRH1q'
+os.environ['TOKEN'] = config('TOKEN')
+token_de_acceso = os.environ['TOKEN']
 graph = fb.GraphAPI(access_token = token_de_acceso)
 
 def getCommets():
